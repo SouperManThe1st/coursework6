@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block title %}View All Players{% endblock %} 
+{% block content %}
+<style>
+    body {
+      background-image: url('static/images/default5.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+    }
+</style>
+<h1 align="center">
+    <p style="color:white">All Players ({{numPlayers}} Players)</p>
+</h1>
+{% for player in playerStats %}
+<a href="view-player-{{player[3]}}">
+    <img src="https://fbref.com/req/202005121/images/headshots/{{player[0]}}_2018.jpg"
+    alt = "NA"
+    wwidth="38"
+    height="38">
+    </a>
+    <button type="button" class="btn btn-primary">{{player[1]}}</button>
+    <button type="button" class="btn btn-success"> {{player[2]}}</button>
+    <button type="button" class="btn btn-primary">{{player[3]}}</button>
+    <button type="button" class="btn btn-warning">Current Price: {{player[4]}}</button>
+    <p></p>
+{% endfor %}
+{% endblock %} 

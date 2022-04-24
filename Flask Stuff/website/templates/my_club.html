@@ -1,0 +1,53 @@
+{% extends "base.html" %} 
+{% block title %}My Club{% endblock %} 
+{% block content %}
+<style>
+  body {
+    background-image: url('static/images/default3.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
+<h1 align="center">
+<p style="color:white">My Club</p>
+</h1>
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h3>
+          <p style="color:white">Players:</p>
+        </h3>
+      </div>
+      <div class="col">
+        <h3 align = "right">
+          <p style="color:white">Balance: {{balance}}</p>
+        </h3>
+      </div>
+    </div>
+</div>
+{% for player in clubsPlayerInfo %}
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <a href="view-player-{{player[3]}}">
+    <img src="https://fbref.com/req/202005121/images/headshots/{{player[3]}}_2018.jpg"
+    alt = "NA"
+    wwidth="38"
+    height="38">
+    </a>
+    <button type="button" class="btn btn-primary">{{player[0]}}</button>
+    <button type="button" class="btn btn-success"> {{player[1]}}</button>
+    <button type="button" class="btn btn-primary">{{player[2]}}</button>
+    <button type="button" class="btn btn-warning">Current Price: {{currentPrices[player[3]]}}</button>
+    <button type="button" class="btn btn-warning">(PWP : {{pricesWhenPacked[player[3]][0]}})</button>
+    
+    <form action="{{ url_for('views.deal_with_my_club') }}" method="post">
+        <input type="hidden" name="playerID" value={{player[3]}}>
+        <input type="hidden" name="clubID" value='{{clubID}}'>
+        <input type="submit" class="btn btn-danger" name="decision" value="sell">
+    </form>
+</div>
+
+
+<p></p>
+{% endfor %}
+{% endblock %} 

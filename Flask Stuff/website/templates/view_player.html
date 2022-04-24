@@ -1,0 +1,37 @@
+{% extends "base.html" %} 
+{% block title %}My Club{% endblock %} 
+{% block content %}
+<style>
+  body {
+    background-image: url('static/images/default3.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
+
+<h1 align="center">
+<p style="color:white">{{name}}</p>
+<img src="https://fbref.com/req/202005121/images/headshots/{{playerID}}_2018.jpg"
+    alt = "NA"
+    wwidth="200"
+    height="200">
+</h1>
+<p style="color:white">nation: {{nation}}</p>
+<p style="color:white">position: {{position}}</p>
+<p style="color:white">team: {{team}}</p>
+<p style="color:white">age: {{age}}</p>
+<p style="color:white">appearances: {{appearances}}</p>
+<p style="color:white">starts: {{starts}}</p>
+<p style="color:white">minutes: {{minutes}}</p>
+<p style="color:white">goals: {{goals}}</p>
+<p style="color:white">assists: {{assists}}</p>
+<p style="color:white">penaltiesScored: {{penaltiesScored}}</p>
+<p style="color:white">penaltiesAttempted: {{penaltiesAttempted}} </p>
+<p style="color:white">yellowCards: {{yellowCards}}</p>
+<p style="color:white">redCards: {{redCards}}</p>
+<p style="color:white">minsPerGoal: {{minsPerGoal}}</p>
+<p style="color:white">minsPerAssist: {{minsPerAssist}}</p>
+{% endblock %} 
+
+
+

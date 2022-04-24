@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% block title %}View Player Stats{% endblock %} 
+{% block content %}
+<style>
+    body {
+      background-image: url('static/images/default5.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+    }
+</style>
+<h1 align="center">
+    <p style="color:white">Player Statistics</p>
+</h1>
+<form class="form-inline" method="POST" action="{{ url_for('views.view_stats') }}">
+    <div class="form-group">
+      <div class="input-group">
+        <select name="statistic" class="selectpicker form-control">
+        <option selected>{{statistics[0]}}</option>
+        {% for stat in statistics%}
+        {% if stat != currentStat%}
+        <option value={{stat}}>{{stat}}</option>
+        {% endif %}
+        {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">View Stats</button>
+    </div>
+  </form>
+
+{% endblock %} 

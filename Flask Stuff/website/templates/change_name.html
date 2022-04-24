@@ -1,0 +1,29 @@
+
+{% extends "base.html" %} {% block title %}Change Username{% endblock %} {% block content
+    %}
+    <style>
+      body {
+        background-image: url("static/images/login4.jpg_large");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+    <h1 align="center">
+      <p style="color:white">Change Username</p>
+    </h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="name"></label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter name"
+        />
+      </div>
+      <p></p>
+      <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+    {% endblock %}

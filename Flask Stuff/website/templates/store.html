@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% block title %}Store{% endblock %} 
+{% block content %}
+<style>
+  body {
+    background-image: url('static/images/default1.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
+  
+<h1 align="center">
+  <p style="color:white">Store</p>
+</h1>
+<h3 align = "right">
+  <p style="color:white">Balance : {{balance}}</p>
+</h3>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="static/images/test3.jpg"
+        width="300"
+        height="400">
+        <p></p>
+        <a class="btn btn-primary" href="/supreme-pack" role="button">Supreme Player Pick : 600</a>
+      </div>
+      <div class="col">
+        <img src="static/images/test4.jpg"
+        width="300"
+        height="400">
+        <p></p>
+        <a class="btn btn-primary" href="/advanced-pack" role="button">Advanced Player Pick : 400</a>
+      </div>
+      <div class="col">
+        <img src="static/images/test6.jpg"
+        width="300"
+        height="400">
+        <p></p>
+        <a class="btn btn-primary" href="/basic-pack" role="button">Standard Player Pick : 200</a>
+      </div>
+    </div>
+</div>
+
+{% endblock %} 

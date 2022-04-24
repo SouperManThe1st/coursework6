@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% block title %}Advanced Pack{% endblock %} 
+{% block content %}
+<style>
+  body {
+    background-image: url('static/images/pack1.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  </style>
+  <h1 align="center">
+  <p></p>
+    <p style="color:white">Advanced Player Pick</p>
+  </h1>
+<h3 align="center">
+<p></p>
+<p style="color:white">Player</p>
+{% for player in range(packSize) %}
+  <img src="https://fbref.com/req/202005121/images/headshots/{{pack[player]}}_2018.jpg"
+  alt = 'Picture not found';
+  wwidth="208"
+  height="208">
+  <p></p>
+  <a href="#" class="btn btn-primary active" aria-current="page">{{packDisplay[player][0]}} : {{packDisplay[player][1]}} ({{packDisplay[player][2]}})</a>
+  <p></p>
+  <div class="btn-group">
+    <form action="{{ url_for('views.deal_with_pack') }}" method="post">
+      <input type="hidden" name="playerID" value="{{pack[player]}}">
+      <input type="hidden" name="clubID" value='{{clubID}}'>
+      <input type="submit" class="btn btn-success" name="decision" value="keep">
+      
+    </form>
+    <form action="{{ url_for('views.deal_with_pack') }}" method="post">
+      <input type="hidden" name="playerID" value="{{pack[player]}}">
+      <input type="hidden" name="clubID" value='{{clubID}}'>
+      <input type="submit" class="btn btn-danger" name="decision" value="sell for {{price}}">
+    </form>
+  </div>
+  <p></p>
+{% endfor %}
+</h3>
+{% endblock %}
